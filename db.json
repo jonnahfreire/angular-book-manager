@@ -1,28 +1,28 @@
 {
-    "users": [
-        {
-            "id": 1,
-            "name": "Jonas Freire",
-            "email": "jonnas.freire17@gmail.com",
-            "password": "12345678"
-        }
-    ],
-    "books": [
-        {
-            "id": 1,
-            "title": "Do Mil ao Milhão",
-            "author": "Thiago, Primo Rico",
-            "pages": 567,
-            "tag": "Quero ler",
-            "idowner": 1
-        },
-        {
-            "id": 2,
-            "title": "O Homem Mais Rico da Babilônia",
-            "author": "Desconhecido",
-            "pages": 532,
-            "tag": "Lido",
-            "idowner": 1
-        }
-    ]
+  "users": [
+    {
+      "id": 1,
+      "name": "Jonas Freire",
+      "email": "jonnas.freire17@gmail.com",
+      "password": "12345678"
+    }
+  ],
+  "books": [
+    {
+      "id": 1,
+      "title": "Do Mil ao Milhão",
+      "author": "Thiago, Primo Rico",
+      "pages": 567,
+      "tag": "Quero ler",
+      "idowner": 1
+    },
+    {
+      "id": 2,
+      "title": "O Homem Mais Rico da Babilônia",
+      "author": "Desconhecido",
+      "pages": 532,
+      "tag": "Lido",
+      "idowner": 1
+    }
+  ]
 }
