@@ -1,4 +1,7 @@
-<table class="table table-striped table-hover caption-top" *ngIf="books">
+<table 
+    class="table table-striped table-hover caption-top" 
+    *ngIf="books; else noBooksMessage"
+>
     <caption>Meus livros</caption>
     <thead>
       <th>Título</th>
@@ -30,3 +33,9 @@
       </tr>
     </tbody>
 </table>
+
+<div class="noBooksMessage">
+    <ng-template #noBooksMessage>
+        Nenhum Livro ainda. Adicione um livro.
+    </ng-template>
+</div>
