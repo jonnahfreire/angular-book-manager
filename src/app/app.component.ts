@@ -26,4 +26,12 @@ export class AppComponent implements OnInit {
     const books = this.books?.filter(book => book.idowner === id);
     return books;
   }
+
+  handleDeleteBook(id: number): void {
+    console.log(`Deletando livro de id: ${id}`)
+  }
+  
+  handleEditBook(id: number): void {
+    console.log(`Editando livro de id: ${id}`)
+  }
 }

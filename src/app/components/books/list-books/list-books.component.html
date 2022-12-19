@@ -4,18 +4,28 @@
       <th>Título</th>
       <th>Autor</th>
       <th>Páginas</th>
-      <th>Tag</th>
+      <th class="text-center">Tag</th>
       <th class="text-center">Ações</th>
     </thead>
     <tbody>
-      <tr scope="row" *ngFor="let book of books">
+        <tr scope="row" *ngFor="let book of books">
         <td>{{ book.title }}</td>
         <td>{{ book.author }}</td>
         <td>{{ book.pages }}</td>
-        <td class="text-center">--</td>
+        <td class="text-center">{{ book.tag }}</td>
         <td id="actions" class="text-center">
-          <i id="action-delete" aria-label="excluir" class="fa fa-trash-o fa-1x"></i>
-          <i id="action-edit" aria-label="editar" class="fa fa-edit fa-1x"></i>
+            <i 
+                id="action-delete" 
+                aria-label="excluir" 
+                class="fa fa-trash-o fa-1x" 
+                (click)="onDelete(book.id)">
+            </i>
+            <i
+                id="action-edit" 
+                aria-label="editar" 
+                class="fa fa-edit fa-1x" 
+                (click)="onEdit(book.id)">
+            </i>
         </td>
       </tr>
     </tbody>

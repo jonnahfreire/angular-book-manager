@@ -1,4 +1,8 @@
 <div class="m-5 mt-2">
-  <app-list-books [books]="getBooksByUserId(1)"></app-list-books>
+  <app-list-books 
+    [books]="getBooksByUserId(1)" 
+    (delete)="handleDeleteBook($event)"
+    (edit)="handleEditBook($event)"
+  ></app-list-books>
 </div>
 <router-outlet></router-outlet>

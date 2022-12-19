@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Book } from 'src/app/Book';
 
 @Component({
@@ -8,4 +8,15 @@ import { Book } from 'src/app/Book';
 })
 export class ListBooksComponent {
   @Input() books: Book[] = [];
+
+  @Output() delete: EventEmitter<number> = new EventEmitter(); 
+  @Output() edit: EventEmitter<number> = new EventEmitter(); 
+
+  onDelete(id: number) {
+    this.delete.emit(id);
+  }
+  
+  onEdit(id: number) {
+    this.edit.emit(id);
+  }
 }
