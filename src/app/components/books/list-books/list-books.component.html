@@ -1,41 +1,45 @@
-<table 
-    class="table table-striped table-hover caption-top" 
-    *ngIf="books; else noBooksMessage"
+<table
+  class="table table-striped table-hover caption-top"
+  *ngIf="books?.length; else noBooksMessage"
 >
-    <caption>Meus livros</caption>
-    <thead>
-      <th>Título</th>
-      <th>Autor</th>
-      <th>Páginas</th>
-      <th class="text-center">Tag</th>
-      <th class="text-center">Ações</th>
-    </thead>
-    <tbody>
-        <tr scope="row" *ngFor="let book of books">
-        <td>{{ book.title }}</td>
-        <td>{{ book.author }}</td>
-        <td>{{ book.pages }}</td>
-        <td class="text-center">{{ book.tag }}</td>
-        <td id="actions" class="text-center">
-            <i 
-                id="action-delete" 
-                aria-label="excluir" 
-                class="fa fa-trash-o fa-1x" 
-                (click)="onDelete(book.id)">
-            </i>
-            <i
-                id="action-edit" 
-                aria-label="editar" 
-                class="fa fa-edit fa-1x" 
-                (click)="onEdit(book.id)">
-            </i>
-        </td>
-      </tr>
-    </tbody>
+  <caption>
+    Meus livros
+  </caption>
+  <thead>
+    <th>Título</th>
+    <th>Autor</th>
+    <th>Páginas</th>
+    <th class="text-center">Tag</th>
+    <th class="text-center">Ações</th>
+  </thead>
+  <tbody>
+    <tr scope="row" *ngFor="let book of books">
+      <td>{{ book.title }}</td>
+      <td>{{ book.author }}</td>
+      <td>{{ book.pages }}</td>
+      <td class="text-center">{{ book.tag }}</td>
+      <td id="actions" class="text-center">
+        <i
+          id="action-delete"
+          aria-label="excluir"
+          class="fa fa-trash-o fa-1x"
+          (click)="onDelete(book.id)"
+        >
+        </i>
+        <i
+          id="action-edit"
+          aria-label="editar"
+          class="fa fa-edit fa-1x"
+          (click)="onEdit(book.id)"
+        >
+        </i>
+      </td>
+    </tr>
+  </tbody>
 </table>
 
-<div class="noBooksMessage">
-    <ng-template #noBooksMessage>
-        Nenhum Livro ainda. Adicione um livro.
-    </ng-template>
-</div>
+<ng-template #noBooksMessage>
+  <div class="noBooksMessage">
+    <span>Nenhum livro ainda. Adicione um livro. </span>
+  </div>
+</ng-template>

@@ -26,12 +26,6 @@
   font-weight: 600;
 }
 
-.right-container .exit {
-  cursor: pointer;
-
-  margin-left: 10px;
-}
-
 .right-container .search-container {
   border: .1rem solid rgb(105, 105, 105);
   border-radius: 5px;
@@ -61,4 +55,11 @@
   width: 80%;
 
   font-size: 16px;
+}
+
+.right-container .exit {
+  cursor: pointer;
+
+  margin-left: 10px;
+  user-select: none;
 }
