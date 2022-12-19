@@ -13,7 +13,7 @@ export class AppComponent implements OnInit {
   constructor(private bookService: BookService) {
     this.loadBooks();
   }
-  
+
   ngOnInit(): void { }
 
   loadBooks() {
@@ -31,7 +31,7 @@ export class AppComponent implements OnInit {
     console.log(`Deletando livro de id: ${id}`)
     this.books = this.books.filter(book => book.id !== id);
   }
-  
+
   handleEditBook(id: number): void {
     console.log(`Editando livro de id: ${id}`)
   }

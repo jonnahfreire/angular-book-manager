@@ -1,6 +1,7 @@
-<div class="m-5 mt-2">
-  <app-list-books 
-    [books]="getBooksByUserId(1)" 
+<app-library-header></app-library-header>
+<div class="m-3 mt-4">
+  <app-list-books
+    [books]="getBooksByUserId(1)"
     (delete)="handleDeleteBook($event)"
     (edit)="handleEditBook($event)"
   ></app-list-books>
