@@ -1,0 +1,64 @@
+.header-container {
+  background-color: black;
+
+  height: 50px;
+  padding: 0 15px 0;
+
+  justify-content: space-between;
+}
+
+.header-container .logo-container {
+  align-items: center;
+}
+
+.header-container .logo-container img {
+  height: 60%;
+}
+
+.header-container .logo-container h5 {
+  margin-left: .5rem;
+  color: snow;
+}
+
+.right-container {
+  align-items: center;
+  color: snow;
+  font-weight: 600;
+}
+
+.right-container .exit {
+  cursor: pointer;
+
+  margin-left: 10px;
+}
+
+.right-container .search-container {
+  border: .1rem solid rgb(105, 105, 105);
+  border-radius: 5px;
+
+  width: 200px;
+
+  padding: 0 10px 0 10px;
+  margin-right: 10px;
+  align-items: center;
+}
+
+.right-container .search-container .search {
+  height: 20px;
+}
+
+.right-container .search-container input {
+  flex: 1;
+
+  background-color: inherit;
+  outline: none;
+  border: none;
+
+  cursor: pointer;
+  color: snow;
+
+  height: inherit;
+  width: 80%;
+
+  font-size: 16px;
+}
