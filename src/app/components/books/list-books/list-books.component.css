@@ -1,0 +1,36 @@
+table caption {
+    font-weight: 600;
+
+    background-color: rgb(241, 241, 241);
+    border-radius: 5px;
+
+    padding-left: 5px;
+    margin-bottom: 20px;
+}
+
+table thead {
+    background-color: black;
+
+    color: #FFF;
+}
+
+table thead th {
+    padding: 8px;
+}
+
+#actions i {
+    padding: 5px;
+    cursor: pointer;
+}
+
+#actions #action-delete {
+    margin-right: 10px;
+}
+
+#actions #action-delete:hover {
+    color: red;
+}
+
+#actions #action-edit:hover {
+    color: green;
+}
