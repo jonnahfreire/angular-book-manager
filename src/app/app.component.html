@@ -1,9 +1,3 @@
-<app-library-header></app-library-header>
-<div class="m-3 mt-4">
-  <app-list-books
-    [books]="getBooksByUserId(1)"
-    (delete)="handleDeleteBook($event)"
-    (edit)="handleEditBook($event)"
-  ></app-list-books>
-</div>
 <router-outlet></router-outlet>
+<!-- <app-index *ngIf="!logged"></app-index>
+<app-home *ngIf="logged"></app-home> -->

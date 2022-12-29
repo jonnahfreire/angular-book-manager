@@ -1,0 +1,9 @@
+<app-library-header></app-library-header>
+
+<div class="m-3 mt-4">
+  <app-list-books
+    [books]="books"
+    (delete)="handleDeleteBook($event)"
+    (edit)="handleEditBook($event)"
+  ></app-list-books>
+</div>

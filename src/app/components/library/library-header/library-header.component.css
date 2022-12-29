@@ -12,11 +12,14 @@
 }
 
 .header-container .logo-container img {
-  height: 60%;
+  height: 80%;
 }
 
 .header-container .logo-container h5 {
   margin-left: .5rem;
+  margin-top: .5rem;
+
+  font-weight: 600;
   color: snow;
 }
 

@@ -1,38 +1,30 @@
 import { Component, OnInit } from '@angular/core';
-import { Book } from './Book';
-import { BookService } from './services/book/book.service';
-
+import { Router } from '@angular/router';
+import { Store } from '@ngrx/store';
+import { AuthState } from './store/models';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  books!: Book[];
 
-  constructor(private bookService: BookService) {
-    this.loadBooks();
-  }
+  constructor(
+    private store: Store<{ auth: AuthState }>,
+    private router: Router
+  ) { }  
 
-  ngOnInit(): void { }
+  ngOnInit(): void { 
+    
+    this.store.select("auth")
+    .subscribe(
+      state => {
 
-  loadBooks() {
-    this.bookService
-      .getAll()
-      .subscribe(books => this.books = books);
-  }
-
-  getBooksByUserId(id: number): Book[] {
-    const books = this.books?.filter(book => book.idowner === id);
-    return books;
-  }
-
-  handleDeleteBook(id: number): void {
-    console.log(`Deletando livro de id: ${id}`)
-    this.books = this.books.filter(book => book.id !== id);
-  }
-
-  handleEditBook(id: number): void {
-    console.log(`Editando livro de id: ${id}`)
+        if(state.logged) {
+          this.router.navigate(["home"], { replaceUrl: true })
+        } else if(!state?.isCreatingUser) {
+          this.router.navigate(["/"], { replaceUrl: true })
+        }
+    });
   }
 }

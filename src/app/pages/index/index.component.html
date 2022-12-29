@@ -1,0 +1,10 @@
+<div class="content-container">
+    <div class="alert-container">
+        <app-alert-error [message]="alert.message" *ngIf="alert.error"></app-alert-error>
+        <app-alert-success [message]="alert.message" *ngIf="alert.success"></app-alert-success>
+    </div>
+    
+    <div class="forms-container">
+        <router-outlet></router-outlet>
+    </div>
+</div>

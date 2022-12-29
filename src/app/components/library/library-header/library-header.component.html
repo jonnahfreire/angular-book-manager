@@ -10,7 +10,12 @@
       <input type="text" name="filter" id="filter" autofocus="true">
     </div>
 
-    <span>Olá, Jonnas</span>
-    <img class="exit" src="../../../assets/logout.png" alt="logout" />
+    <span>Olá, {{ username | onlyFirstName }}</span>
+    <img 
+      class="exit" 
+      src="../../../assets/logout.png" 
+      alt="logout" 
+      (click)="handleExit()" 
+    />
   </div>
 </div>

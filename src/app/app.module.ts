@@ -1,22 +1,28 @@
-import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { ListBooksComponent } from './components/books/list-books/list-books.component';
-import { LibraryHeaderComponent } from './components/library-header/library-header.component';
+import { PagesModule } from './pages/pages.module';
+import { StoreModule } from '@ngrx/store';
+import { appReducer, authReducer } from './store/app.reducers';
+import { EffectsModule } from '@ngrx/effects';
+import { UserEffectService } from './store/user.effect.service';
+import { BookEffectService } from './store/book.effect.service';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ListBooksComponent,
-    LibraryHeaderComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    PagesModule,
+    StoreModule.forRoot({ app: appReducer, auth: authReducer }),
+    EffectsModule.forRoot([ 
+      UserEffectService, 
+      BookEffectService 
+    ])
   ],
   providers: [],
   bootstrap: [AppComponent]
